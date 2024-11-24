@@ -46,12 +46,13 @@ In development...
 
 ## Repo Structure
 
-Decided to fully commit to Flux CD and their best practices.
-
 Set up the repo according to this guide:
 
 https://fluxcd.io/flux/guides/repository-structure/
 
-And following this example:
+And following the following examples:
 
 https://github.com/fluxcd/flux2-kustomize-helm-example
+https://github.com/yoandl/fluxv2-infrastructure-stack-example
+
+The namespaces folder in the root of the repository clarifies the active processes managed by the clusters.

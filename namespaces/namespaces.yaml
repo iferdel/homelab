@@ -6,7 +6,9 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: nginx
+  name: ingress-nginx
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
 ---
 apiVersion: v1
 kind: Namespace
