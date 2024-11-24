@@ -25,8 +25,9 @@ I’ve developed an interest in mini PCs because of their ergonomic design and r
 
 This is the place where I can destroy things freely. Databases in staging don't contain data. In staging I allow workload pods to be scheduled on the control plane.
 
-* controlplane-1    SONY VAIO PCG 61311u i3/4GB/120GB SSD 
+* controlplane-1    SAMSUNGN P470R5E-X02CL i5-3230M/8GB/1TB HDD (Functional Battery)
 * worker-1          HP PRODESK MINI 600 G2, i3-6100T/8GB/240GB SSD (Reacconditioned)
+* worker-2          SONY VAIO PCG 61311u i3/4GB/120GB SSD (Functional Battery)
 
 I also use a IdeaPad 3 15ARH05 with 16GB of memory running Windows with WSL2. This is my personal machine.
 
