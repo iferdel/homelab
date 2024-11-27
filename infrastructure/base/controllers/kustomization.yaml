@@ -1,3 +1,0 @@
-resources:
-  - cert-manager.yaml
-  - ingress-nginx.yaml
