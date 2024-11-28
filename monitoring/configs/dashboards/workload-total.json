@@ -1051,7 +1051,7 @@
   "schemaVersion": 18,
   "style": "dark",
   "tags": [
-    "flux"
+    "kubernetes-mixin"
   ],
   "templating": {
     "list": [
