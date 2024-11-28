@@ -9,6 +9,8 @@ configMapGenerator:
       - dashboards/control-plane.json
       - dashboards/cluster.json
       - dashboards/logs.json
+      - dashboards/workload-total.json
+      - dashboards/grafana-overview.json
     options:
       labels:
         grafana_dashboard: "1"
