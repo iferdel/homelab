@@ -10,6 +10,6 @@ spec:
     initdb:
       postInitTemplateSQL:
         - CREATE EXTENSION timescaledb;
-    postgresql:
-      shared_preload_libraries:
-        - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
+  postgresql:
+    shared_preload_libraries:
+      - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
