@@ -1,0 +1,15 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: timescaledb
+  namespace: data
+spec:
+  instances: 1
+  imageName: ghcr.io/imusmanmalik/timescaledb-postgis:latest
+  bootstrap:
+    initdb:
+      postInitTemplateSQL:
+        - CREATE EXTENSION timescaledb;
+    postgresql:
+      shared_preload_libraries:
+        - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
