@@ -13,13 +13,10 @@ spec:
   postgresql:
     shared_preload_libraries:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
+  monitoring:
+    enablePodMonitoring: true
+  resources:
+    requests: 
+      memory: 100Mi
   storage:
-    pvcTemplates:
-      metadata:
-        name: timescaledb-pvc
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 1Gi
+    storage: 1Gi
