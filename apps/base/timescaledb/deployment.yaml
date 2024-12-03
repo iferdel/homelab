@@ -1,0 +1,18 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timescaledb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timescaledb
+  template:
+    ports:
+      - containerPort: 5432
+        protocol: TCP
+    volumes:
+      - name: timescaledb-data
+        persistentVolumeClaim:
+          claimName: timescaledb-pvc
