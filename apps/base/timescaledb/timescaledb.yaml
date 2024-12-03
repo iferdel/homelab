@@ -20,8 +20,8 @@ spec:
     pvcTemplate:
       accessModes: 
       - ReadWriteOnce
-    resources:
-      requests:
-        storage: 1Gi
-    storageClass: standard
-    volumeMode: Filesystem
+      resources:
+        requests:
+          storage: 1Gi
+      storageClass: standard
+      volumeMode: Filesystem
