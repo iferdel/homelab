@@ -18,7 +18,7 @@ spec:
       metadata:
         name: timescaledb-pvc
       spec:
-        accesMode:
+        accessModes:
           - ReadWriteOnce
         resources:
           requests:
