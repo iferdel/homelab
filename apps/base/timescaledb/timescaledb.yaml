@@ -17,10 +17,11 @@ spec:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
   storage:
     size: 1Gi
-    pvcTemplate:
-      accessModes: 
-      - ReadWriteOnce
-      resources:
-        requests:
-          storageClassName: ephemeral
+    storageClassName: ephemeral
+      #    pvcTemplate:
+      #      accessModes: 
+      #      - ReadWriteOnce
+      #      resources:
+      #        requests:
+      #          storageClassName: ephemeral
             #volumeMode: Filesystem
