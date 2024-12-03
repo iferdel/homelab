@@ -5,6 +5,7 @@ metadata:
   name: timescaledb
   namespace: data
 spec:
+  description: "PostgreSQL with timescaleDB extension for time series data"
   instances: 1
   imageName: ghcr.io/imusmanmalik/timescaledb-postgis:16-3.5
   bootstrap:
@@ -15,5 +16,5 @@ spec:
     shared_preload_libraries:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
   storage:
-    strageClass: standard
+    storageClass: standard
     size: 1Gi
