@@ -14,4 +14,12 @@ spec:
     shared_preload_libraries:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
   storage:
-    size: 1Gi
+    pvcTemplates:
+      metadata:
+        name: timescaledb-pvc
+      spec:
+        accesMode:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
