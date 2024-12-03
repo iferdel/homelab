@@ -22,6 +22,5 @@ spec:
       - ReadWriteOnce
       resources:
         requests:
-          storage: 1Gi
           storageClassName: ephemeral
             #volumeMode: Filesystem
