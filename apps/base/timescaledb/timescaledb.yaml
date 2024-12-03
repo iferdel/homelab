@@ -1,3 +1,4 @@
+# timescaledb.yaml
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
@@ -15,8 +16,6 @@ spec:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
   monitoring:
     enablePodMonitoring: true
-  resources:
-    requests: 
-      memory: 100Mi
   storage:
     storage: 1Gi
+    storageClass: "standard"
