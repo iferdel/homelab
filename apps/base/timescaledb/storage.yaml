@@ -4,7 +4,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: timescaledb-1
 spec:
-  storageClassName: "standard"
+  # storageClassName: "standard"
   capacity:
     storage: 1Gi
   accessModes:
