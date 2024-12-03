@@ -14,8 +14,6 @@ spec:
   postgresql:
     shared_preload_libraries:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
-  monitoring:
-    enablePodMonitoring: true
   storage:
     storage: 1Gi
     storageClass: "standard"
