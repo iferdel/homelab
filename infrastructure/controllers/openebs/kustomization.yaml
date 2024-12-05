@@ -1,4 +1,4 @@
 namespace: openebs
 resources:
-  - repository.yaml
-  - release.yaml
+  #- repository.yaml
+  #- release.yaml
