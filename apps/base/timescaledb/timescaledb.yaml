@@ -17,8 +17,8 @@ spec:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
   storage:
     size: 1Gi
-    storageClassName: openebs-hostpath # Use OpenEBS Hostpath StorageClass
     pvcTemplate:
+      storageClassName: openebs-hostpath # Use OpenEBS Hostpath StorageClass
       accessModes: 
         - ReadWriteOnce
       resources:
