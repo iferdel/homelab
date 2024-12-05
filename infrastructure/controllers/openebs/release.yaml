@@ -1,8 +1,10 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: openebs
+  namespace: openebs
 spec:
+  releaseName: openebs
   interval: 5m
   chart:
     spec:
@@ -12,3 +14,8 @@ spec:
         name: openebs
       interval: 60m
       version: 4.1.1
+  values:
+    engines:
+      replicated:
+        mayastor:
+          enabled: false
