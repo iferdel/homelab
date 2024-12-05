@@ -14,8 +14,3 @@ spec:
         name: openebs
       interval: 60m
       version: 4.1.1
-  values:
-    engines:
-      replicated:
-        mayastor:
-          enabled: false
