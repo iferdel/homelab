@@ -1,6 +1,3 @@
 # kustomization.yaml
 resources:
   - timescaledb.yaml
-    #- storage.yaml
-    #- networking.yaml
-    #- deployment.yaml
