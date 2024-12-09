@@ -14,13 +14,15 @@ spec:
         name: openebs
       interval: 60m
       version: 4.1.1
-  values: # patch https://www.talos.dev/v1.8/kubernetes-guides/configuration/replicated-local-storage-with-openebs/
+  values: # Patches for replicated local storage with OpenEBS as per Talos docs
     engines:
       local:
         lvm:
           enabled: false
         zfs: 
           enabled: false
+    # The mayastor section here only disables certain initContainers if needed,
+    # but does not handle etcd or loki configuration. That's handled in the separate Mayastor HelmRelease.
     mayastor:
       csi:
         node:
