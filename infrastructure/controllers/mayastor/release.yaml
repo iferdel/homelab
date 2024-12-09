@@ -4,6 +4,7 @@ metadata:
   name: mayastor
   namespace: mayastor
 spec:
+  timeout: 5m
   releaseName: mayastor
   interval: 5m
   chart:

@@ -4,6 +4,7 @@ metadata:
   name: openebs
   namespace: openebs
 spec:
+  timeout: 5m
   releaseName: openebs
   interval: 5m
   chart:
