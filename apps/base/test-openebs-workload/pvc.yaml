@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: openebs-pvc
+  name: example-openebs-pvc
 spec:
   storageClassName: openebs-hostpath
   accessModes:
