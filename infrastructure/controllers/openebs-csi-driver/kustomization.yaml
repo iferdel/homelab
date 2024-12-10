@@ -1,0 +1,4 @@
+namespace: openebs
+resources:
+  - operator.yaml
+
