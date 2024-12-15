@@ -2,10 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: openebs
-  namespace: openebs
 spec:
-  timeout: 5m
-  releaseName: openebs
   interval: 5m
   chart:
     spec:
