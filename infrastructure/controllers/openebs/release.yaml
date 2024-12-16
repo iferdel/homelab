@@ -1,8 +1,11 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: openebs
+  namespace: openebs
 spec:
+  timeout: 5m
+  releaseName: openebs
   interval: 5m
   chart:
     spec:
@@ -18,9 +21,6 @@ spec:
         lvm:
           enabled: false
         zfs: 
-          enabled: false
-      replicated:
-        mayastor:
           enabled: false
     # The mayastor section here only disables certain initContainers if needed,
     # but does not handle etcd or loki configuration. That's handled in the separate Mayastor HelmRelease.
