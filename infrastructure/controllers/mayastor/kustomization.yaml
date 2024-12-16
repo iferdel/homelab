@@ -1,5 +1,5 @@
-namespace: mayastor
-resources:
+#namespace: mayastor
+#resources:
 #  - repository.yaml
 #  - release.yaml
 
