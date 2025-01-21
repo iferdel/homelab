@@ -4,6 +4,8 @@ This repo contains all of the configuration and documentation of my homelab.
 
 The whole idea of having a homelab is to have a place where I can try out and learn new things using Kubernetes and GitOps as backbone. On the other hand, by self-hosting some applications, it makes me feel responsible for the entire process of deploying and maintaining an application from A to Z. It forces me to think about backup strategies, security, scalability and the ease of deployment and maintenance.
 
+(Diagram of GitOps powered homelab)
+
 ## Principles
 
 I have a few principles that guide my choices for my homelab.
