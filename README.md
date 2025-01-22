@@ -15,7 +15,7 @@ I have a few principles that guide my choices for my homelab.
 
 ## Cluster Provisioning
 
-I use [Talos Linux](https://www.talos.dev/) to set up my machines. Talos is so lightweight and minimal, and it provides production grade security right out of the box. It also forces me to use all my servers as Kubernetes nodes only, so I need to figure out ways to run all my desired workloads and services on Kubernetes, such as one may expect in a cloud based scenario.
+I use [Talos Linux](https://www.talos.dev/) to set up my machines (kudos to ventoy tooling, since it makes easier for the installation). Talos is so lightweight and minimal, and it provides production grade security right out of the box. It also forces me to use all my servers as Kubernetes nodes only, so I need to figure out ways to run all my desired workloads and services on Kubernetes, such as one may expect in a cloud based scenario.
 
 ## Hardware
 
