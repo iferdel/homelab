@@ -6,7 +6,7 @@ metadata:
   namespace: data
 spec:
   description: "PostgreSQL with timescaleDB extension for time series data"
-  instances: 1
+  instances: 3
   imageName: ghcr.io/imusmanmalik/timescaledb-postgis:16-3.5
   bootstrap:
     initdb:
@@ -16,11 +16,11 @@ spec:
     shared_preload_libraries:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
   storage:
-    size: 30Gi
-    pvcTemplate:
-      storageClassName: openebs-hostpath # Use OpenEBS Hostpath StorageClass
-      accessModes: 
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 10Gi
+    size: 1Gi
+    # pvcTemplate:
+    #   storageClassName: openebs-hostpath # Use OpenEBS Hostpath StorageClass
+    #   accessModes: 
+    #     - ReadWriteOnce
+    #   resources:
+    #     requests:
+    #       storage: 1Gi
