@@ -3,7 +3,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: timescaledb
-  namespace: data
+  # namespace: data
 spec:
   description: "PostgreSQL with timescaleDB extension for time series data"
   instances: 1
