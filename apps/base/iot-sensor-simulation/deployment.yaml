@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iot-sensor-simulation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iot-sensor-simulation
+  template:
+    metadata:
+      labels:
+        app: iot-sensor-simulation
+        policy-type: "app"
+    spec:
+      containers:
+        - name: iot-sensor-simulation
+          image: iferdel777/iot-sensor-simulation:staging
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: iot-sensor-simulation-configmap
+            - secretRef:
+                name: iot-sensor-simulation-env
+
+      restartPolicy: Always
