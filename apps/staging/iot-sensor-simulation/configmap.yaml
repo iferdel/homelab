@@ -5,6 +5,6 @@ metadata:
   namespace: iot
 data:
   SENSOR_SERIAL_NUMBER: "AAD-1123"
-  SENSOR_SAMPLE_FREQUENCY: 35.0
+  SENSOR_SAMPLE_FREQUENCY: "35.0"
 ---
 
