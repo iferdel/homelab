@@ -3,4 +3,5 @@ kind: RabbitmqCluster
 metadata:
   name: definition
 spec:
-  storage: 0
+  persistence:
+    storage: 0
