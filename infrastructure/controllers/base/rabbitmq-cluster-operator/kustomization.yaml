@@ -1,4 +1,4 @@
 namespace: rabbitmq-system
 resources:
-  - operator.yaml
+  - cluster-operator.yaml
   - rabbitmq-cluster.yaml
