@@ -23,7 +23,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: iot-sensor-simulation-configmap
-            # - secretRef:
-            #     name: iot-sensor-simulation-env
+            - secretRef:
+                name: iot-sensor-simulation-env
 
       restartPolicy: Always
