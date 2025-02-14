@@ -36,11 +36,10 @@ spec:
       - rabbitmq_prometheus
     additionalConfig: |
       loopback_users.guest = false
-
       cluster_name = rabbitmq-overview
       cluster_formation.peer_discovery_backend = rabbit_peer_discovery_classic_config
       cluster_formation.classic_config.nodes.1 = rabbit@iot-rabbitmq
-
+      management.listeners.ssl = false
       load_definitions = /etc/rabbitmq/definitions.json
       collect_statistics_interval = 1000
 

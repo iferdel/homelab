@@ -1,4 +1,0 @@
-
-      listeners.tcp.default = 5672
-      management.listeners.port = 15672
-      management.listeners.ssl = false
