@@ -35,6 +35,7 @@ spec:
       - rabbitmq_mqtt
       - rabbitmq_prometheus
     additionalConfig: |
+      vm_memory_high_watermark = 768MiB
       load_definitions = /etc/rabbitmq/definitions.json
       collect_statistics_interval = 1000
 
