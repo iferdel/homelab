@@ -33,7 +33,7 @@ spec:
   rabbitmq:
     additionalPlugins:
       - rabbitmq_mqtt
-      - rabbitmq_prometheus
+      # RabbitMQ Cluster Kubernetes Operator enabled rabbitmq_peer_discovery_k8s, rabbitmq_prometheus and rabbitmq_management by default.
     additionalConfig: |
       loopback_users.guest = false
       cluster_name = rabbitmq-overview
