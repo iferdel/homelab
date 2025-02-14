@@ -1,0 +1,38 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: definition
+spec:
+  replicas: 2
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: 800m
+      memory: 1Gi
+
+  override:
+    statefulSet:
+      spec:
+        template:
+          spec:
+            containers:
+            - name: rabbitmq
+              volumeMounts:
+                - mountPath: /etc/rabbitmq/definitions.json
+                  subPath: definitions.json
+                  name: definitions
+            volumes:
+            - name: definitions
+              configMap:
+                name: definitions
+                  
+  rabbitmq:
+    additionalConfig: |
+      load_definitions = /etc/rabbitmq/definitions.json
+      collect_statistics_interval = 1000
+
+  persistence:
+    storage: 0
+
