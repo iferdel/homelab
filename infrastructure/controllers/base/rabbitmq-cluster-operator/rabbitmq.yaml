@@ -5,7 +5,7 @@ metadata:
 spec:
   service:
     type: ClusterIP
-  replicas: 2
+  replicas: 3
   resources:
     requests:
       cpu: 500m
