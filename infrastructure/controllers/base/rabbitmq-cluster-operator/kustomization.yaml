@@ -2,3 +2,4 @@ namespace: rabbitmq-system
 resources:
   - cluster-operator.yaml
   - rabbitmq.yaml
+  - configmap.yaml
