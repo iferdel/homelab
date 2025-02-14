@@ -8,7 +8,7 @@ data:
     {
       "product_name": "RabbitMQ",
       "global_parameters": [
-        {"name": "cluster_name", "value": "rabbitmq-overview"}
+        {"name": "cluster_name", "value": "iferdel-homelab"}
       ],
       "users": [
         {
