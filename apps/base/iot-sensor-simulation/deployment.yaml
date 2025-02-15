@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: iot-sensor-simulation
-          image: iferdel777/iot-sensor-simulation:v1.0.0
+          image: iferdel777/iot-sensor-simulation:v1.0.1
 
           securityContext:
             allowPrivilegeEscalation: false
