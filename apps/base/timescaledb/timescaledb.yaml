@@ -16,11 +16,11 @@ spec:
     shared_preload_libraries:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
   storage:
-    size: 30Gi
+    size: 0
     pvcTemplate:
       # default storage class name
       accessModes: 
         - ReadWriteOnce
       resources:
         requests:
-          storage: 30Gi
+          storage: 0
