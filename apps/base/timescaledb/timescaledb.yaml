@@ -16,7 +16,7 @@ spec:
     shared_preload_libraries:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
   storage:
-    size: 0
+    # size: 0
     pvcTemplate:
       # default storage class name
       accessModes: 
