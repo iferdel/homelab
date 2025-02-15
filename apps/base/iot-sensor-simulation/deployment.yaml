@@ -20,10 +20,10 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
 
-          envFrom:
-            - configMapRef:
-                name: iot-sensor-simulation-configmap
-            - secretRef:
-                name: iot-sensor-simulation-env
+          # envFrom:
+          #   - configMapRef:
+          #       name: iot-sensor-simulation-configmap
+          #   - secretRef:
+          #       name: iot-sensor-simulation-env
 
       restartPolicy: Always
