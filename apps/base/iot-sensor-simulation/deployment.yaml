@@ -20,6 +20,12 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
 
+          env:
+            - name: RABBIT_CONN_STRING
+              value: "amqp://guest:guest@rabbitmq.rabbitmq-system:5672/"
+            - name: POSTGRES_CONN_STRING
+              value: "postgres://postgres:postgres@iot-timescaledb-1:5432/iot"
+
           # envFrom:
           #   - configMapRef:
           #       name: iot-sensor-simulation-configmap
