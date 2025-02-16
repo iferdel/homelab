@@ -1,3 +1,2 @@
-# kustomization.yaml
 resources:
   - timescaledb.yaml
