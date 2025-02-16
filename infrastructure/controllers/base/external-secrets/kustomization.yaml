@@ -1,0 +1,7 @@
+resources:
+  - namespace.yaml
+  - repositories.yaml
+  - deployment-crds.yaml
+  # - deployment-crs.yaml
+  - deployment.yaml
+  # - secret-token.yaml
