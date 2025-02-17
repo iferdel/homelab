@@ -1,2 +1,2 @@
 resources:
-  - azure-wi-webhook.yaml
+  - release.yaml
