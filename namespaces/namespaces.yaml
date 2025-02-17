@@ -28,3 +28,8 @@ kind: Namespace
 metadata:
   name: iot
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: azure-workload-identity-system
+---
