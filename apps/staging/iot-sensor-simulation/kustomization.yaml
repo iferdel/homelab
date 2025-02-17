@@ -1,4 +1,2 @@
-# kustomization.yaml
 resources:
   - ../../base/iot-sensor-simulation/
-  - configmap.yaml

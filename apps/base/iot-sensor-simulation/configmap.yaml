@@ -1,9 +1,12 @@
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: iot
+  name: iot-sensor-simulation-configmap
   namespace: iot
 data:
   RABBIT_CONN_STRING: "amqp://guest:guest@rabbitmq.rabbitmq-system:5672/"
+  SENSOR_SERIAL_NUMBER: "AAD-1123"
+  SENSOR_SAMPLE_FREQUENCY: "35.0"
 ---
 

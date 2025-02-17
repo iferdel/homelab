@@ -20,13 +20,9 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
 
-          env:
-            - name: RABBIT_CONN_STRING 
-              valueFrom:
-                configMapKeyRef:
-                  name: iot
-                  key: RABBIT_CONN_STRING
           envFrom:
+            - configMapRef:
+                name: iot-sensor-simulation-configmap
             - secretRef:
                 name: iot-sensor-simulation-env
 
