@@ -1,3 +1,4 @@
 resources:
   - rabbitmq
   - external-secrets
+  - azwi
