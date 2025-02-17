@@ -4,6 +4,7 @@ metadata:
   name: workload-identity-webhook
   namespace: azure-workload-identity-system
 spec:
+  interval: 1h
   chart:
     spec:
       chart: workload-identity-webhook
