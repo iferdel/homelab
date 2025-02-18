@@ -2,3 +2,4 @@ namespace: azure-workload-identity-system
 resources:
   - release.yaml
   - repository.yaml
+  - namespace.yaml
