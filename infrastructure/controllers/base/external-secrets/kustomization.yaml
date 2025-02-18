@@ -3,5 +3,5 @@ resources:
   - repositories.yaml
   - deployment-crds.yaml
   # - deployment-crs.yaml
-  - deployment.yaml
+  - release.yaml
   # - secret-token.yaml

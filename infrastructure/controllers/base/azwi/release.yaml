@@ -11,6 +11,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: azure-workload-identity
-      version: "x.x.x"
+      version: "v1.4.1"
   values:
     azureTenantID: ce16100c-8dcb-47a7-9964-4b46ab5962a3
