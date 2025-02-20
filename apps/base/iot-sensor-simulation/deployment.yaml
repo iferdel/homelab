@@ -25,5 +25,12 @@ spec:
                 name: iot-sensor-simulation-configmap
             - secretRef:
                 name: iot-sensor-simulation-env
+          env:
+            - name: POSTGRES_CONN_STRING
+              valueFrom:
+                secretKeyRef:
+                  namespace: data
+                  name: timescaledb-conn-string
+                  key: POSTGRES_CONN_STRING
 
       restartPolicy: Always
