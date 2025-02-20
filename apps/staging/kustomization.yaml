@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   # - iot-api
   # - iot-sensor-simulation
-  - iot-sensor-registry
+  # - iot-sensor-registry
   # - iot-sensor-logs-ingester
   # - iot-sensor-measurements-ingester
   # - cloudnativepg
