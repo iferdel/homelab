@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: iot-logs-ingester-configmap
+  namespace: iot
+data:
+  RABBIT_CONN_STRING: "amqp://guest:guest@rabbitmq.rabbitmq-system:5672/"
+---
+

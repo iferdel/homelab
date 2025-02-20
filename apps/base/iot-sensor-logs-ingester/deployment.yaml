@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iot-logs-ingester
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iot-logs-ingester
+  template:
+    metadata:
+      labels:
+        app: iot-logs-ingester
+        policy-type: "app"
+    spec:
+      containers:
+        - name: iot-logs-ingester
+          image: iferdel777/iot-logs-ingester:v1.0.1
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: iot-logs-ingester-configmap
+          env:
+            - name: POSTGRES_CONN_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: timescaledb-conn-string
+                  key: POSTGRES_CONN_STRING
+
+      restartPolicy: Always
