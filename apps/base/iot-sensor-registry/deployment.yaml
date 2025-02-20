@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: iot-sensor-registry
-          image: iferdel777/iot-sensor-registry:v1.0.1
+          image: iferdel777/iot-sensor-registry:v1.0.2
 
           securityContext:
             allowPrivilegeEscalation: false

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: iot-measurements-ingester
-          image: iferdel777/iot-measurements-ingester:v1.0.1
+          image: iferdel777/iot-measurements-ingester:v1.0.2
 
           securityContext:
             allowPrivilegeEscalation: false
