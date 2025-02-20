@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: iot-measurements-ingester
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: iot-measurements-ingester
