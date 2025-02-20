@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iot-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iot-api
+  template:
+    metadata:
+      labels:
+        app: iot-api
+        policy-type: "app"
+    spec:
+      containers:
+        - name: iot-api
+          image: iferdel777/iot-api:v1.0.1
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: iot-api-configmap
+          env:
+            - name: POSTGRES_CONN_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: timescaledb-conn-string
+                  key: POSTGRES_CONN_STRING
+
+      restartPolicy: Always
