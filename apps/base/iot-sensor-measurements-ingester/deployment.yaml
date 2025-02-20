@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iot-measurements-ingester
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iot-measurements-ingester
+  template:
+    metadata:
+      labels:
+        app: iot-measurements-ingester
+        policy-type: "app"
+    spec:
+      containers:
+        - name: iot-measurements-ingester
+          image: iferdel777/iot-measurements-ingester:v1.0.1
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: iot-measurements-ingester-configmap
+          env:
+            - name: POSTGRES_CONN_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: timescaledb-conn-string
+                  key: POSTGRES_CONN_STRING
+
+      restartPolicy: Always
