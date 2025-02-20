@@ -1,11 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  # - iot-api
+  - iot-api
   # - iot-sensor-simulation
   - iot-sensor-registry
-  # - iot-sensor-logs-ingester
-  # - iot-sensor-measurements-ingester
+  - iot-sensor-logs-ingester
+  - iot-sensor-measurements-ingester
   # - cloudnativepg
   # - timescaledb
 
