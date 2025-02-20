@@ -23,8 +23,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: iot-sensor-simulation-configmap
-            - secretRef:
-                name: iot-sensor-simulation-env
           env:
             - name: POSTGRES_CONN_STRING
               valueFrom:
