@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iot-sensor-registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iot-sensor-registry
+  template:
+    metadata:
+      labels:
+        app: iot-sensor-registry
+        policy-type: "app"
+    spec:
+      containers:
+        - name: iot-sensor-registry
+          image: iferdel777/iot-sensor-registry:v1.0.1
+
+          securityContext:
+            allowPrivilegeEscalation: false
+
+          envFrom:
+            - configMapRef:
+                name: iot-sensor-registry-configmap
+          env:
+            - name: POSTGRES_CONN_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: timescaledb-conn-string
+                  key: POSTGRES_CONN_STRING
+
+      restartPolicy: Always
