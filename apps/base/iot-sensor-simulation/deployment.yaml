@@ -27,7 +27,7 @@ spec:
             - name: POSTGRES_CONN_STRING
               valueFrom:
                 secretKeyRef:
-                  name: timescaledb-conn-string
+                  name: timescaledb-conn-string-session-pool
                   key: POSTGRES_CONN_STRING
 
       restartPolicy: Always
