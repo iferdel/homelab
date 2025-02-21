@@ -11,7 +11,7 @@ spec:
         paths:
           - path: /
             pathType: Prefix
-            backedn:
+            backend:
               service:
                 name: iot-api
                 port:
