@@ -33,6 +33,6 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["bin/sh", "-c", "mkdir -p log && touch log/iot.log"]
+                command: ["touch", "log/iot.log"]
 
       restartPolicy: Always
