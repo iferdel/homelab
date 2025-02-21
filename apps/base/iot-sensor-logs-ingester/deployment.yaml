@@ -30,9 +30,4 @@ spec:
                   name: timescaledb-conn-string
                   key: POSTGRES_CONN_STRING
 
-          lifecycle:
-            postStart:
-              exec:
-                command: ["touch", "log/iot.log"]
-
       restartPolicy: Always
