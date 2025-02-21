@@ -7,6 +7,6 @@ metadata:
 data:
   RABBIT_CONN_STRING: "amqp://guest:guest@rabbitmq.rabbitmq-system:5672/"
   SENSOR_SERIAL_NUMBER: "AAD-1123"
-  SENSOR_SAMPLE_FREQUENCY: "5.0"
+  SENSOR_SAMPLE_FREQUENCY: "35.0"
 ---
 
