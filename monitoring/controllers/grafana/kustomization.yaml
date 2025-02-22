@@ -4,4 +4,6 @@ resources:
   - repository.yaml
   - alloy.yaml
   - alloy-values.yaml
-  - loki-stack.yaml
+  # - loki-stack.yaml
+  - grafana.yaml
+  - grafana-configmap.yaml
