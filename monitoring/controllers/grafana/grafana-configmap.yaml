@@ -25,7 +25,7 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: grafana-dashboard
+  name: grafana-dashboard-definition
   namespace: monitoring
 data:
   dashboard.json : |-
