@@ -1,3 +1,4 @@
+# alloy-values.yaml
 # -- Overrides the chart's name. Used to change the infix in the resource names.
 nameOverride: null
 
