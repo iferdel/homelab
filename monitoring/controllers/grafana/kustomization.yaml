@@ -3,4 +3,5 @@ namespace: monitoring
 resources:
   - repository.yaml
   - alloy.yaml
-  - loki.yaml
+  - alloy-values.yaml
+  - loki-stack.yaml
