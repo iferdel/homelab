@@ -15,5 +15,3 @@ spec:
         kind: HelmRepository
         name: grafana-charts
       interval: 60m
-  valuesFiles:
-    - ./alloy-values.yaml
