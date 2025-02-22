@@ -1,4 +1,5 @@
 namespace: monitoring
 resources:
   - repository.yaml
-  - release.yaml
+  - alloy.yaml
+  - loki.yaml
