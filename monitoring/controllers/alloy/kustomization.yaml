@@ -1,0 +1,4 @@
+namespace: monitoring
+resources:
+  - repository.yaml
+  - release.yaml
