@@ -1,3 +1,4 @@
+# kustomization.yaml
 namespace: monitoring
 resources:
   - repository.yaml
