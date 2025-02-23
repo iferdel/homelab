@@ -14,6 +14,3 @@ spec:
   postgresql:
     shared_preload_libraries:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
-  primaryStorage:
-    ephemeralVolume:
-      size: 30Gi
