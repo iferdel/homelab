@@ -16,10 +16,8 @@ spec:
       containers:
         - name: iot-logs-ingester
           image: iferdel777/iot-logs-ingester:v1.0.3
-
           securityContext:
             allowPrivilegeEscalation: false
-
           envFrom:
             - configMapRef:
                 name: iot-logs-ingester-configmap
@@ -29,5 +27,12 @@ spec:
                 secretKeyRef:
                   name: timescaledb-conn-string
                   key: POSTGRES_CONN_STRING
+          volumeMounts:
+            - mountPath: "/app/log"
+              name: iotlogs
+      volumes:
+        - name: iotlogs
+          persistentVolumeClaim:
+            claimName: iot-logs-pvc
 
       restartPolicy: Always
