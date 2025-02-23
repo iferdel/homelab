@@ -11,9 +11,11 @@ spec:
       cpu: 500m
       memory: 1Gi
     limits:
-      cpu: 800m
-      memory: 1Gi
-
+      cpu: 2000m
+      memory: 2Gi
+  persistence:
+    storageClassName: longhorn
+    storage: 10Gi
   override:
     statefulSet:
       spec:
@@ -29,7 +31,6 @@ spec:
             - name: definitions
               configMap:
                 name: definitions
-                  
   rabbitmq:
     additionalPlugins:
       - rabbitmq_mqtt
@@ -40,7 +41,4 @@ spec:
       cluster_formation.peer_discovery_backend = rabbit_peer_discovery_classic_config
       load_definitions = /etc/rabbitmq/definitions.json
       collect_statistics_interval = 1000
-
-  persistence:
-    storage: 0
 
