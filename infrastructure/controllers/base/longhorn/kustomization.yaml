@@ -2,4 +2,3 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
-  - service.yaml
