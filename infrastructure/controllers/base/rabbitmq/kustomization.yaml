@@ -1,5 +1,6 @@
 namespace: rabbitmq-system
 resources:
+  - namespace.yaml
   - cluster-kubernetes-operator.yaml
   - rabbitmq.yaml
   - configmap.yaml
