@@ -1,4 +1,5 @@
 resources:
   - rabbitmq
+  - longhorn
   # - external-secrets
   # - azwi
