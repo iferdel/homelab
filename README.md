@@ -6,6 +6,8 @@ The whole idea of having a homelab is to have a place where I can try out and le
 
 (Diagram of GitOps powered homelab)
 
+highly recommend https://kube.fm/episodes
+
 ## Principles
 
 I have a few principles that guide my choices for my homelab.
@@ -39,12 +41,38 @@ In development...
 
 ## Databases
 
-In development...
+plenty of info about Storage in Talos site https://www.talos.dev/v1.9/kubernetes-guides/configuration/storage/
+Same as this dude here, when I tried openebs with [mayastor](https://github.com/openebs/Mayastor) in my local cluster there was a huge overhead on my cluster. 
+mayastor uses NVMEoF
+Rook/Ceph is out of competition since its huge.
+Avoid NFS protocol (network file system).
+Deciding to go into longhorn and thus still relying on iscsi (openebs also uses iSCSI)
+https://khenry.substack.com/p/longhorn-on-talos
+had some issues regarding to same as this fellow https://www.reddit.com/r/kubernetes/comments/1hwietr/problem_with_adding_extensions_to_talos/?share_id=ZaOf9kGRPx6laONfEFb1J&utm_medium=ios_app&utm_name=iossmf&utm_source=share&utm_term=3
+
+this implementation uses argoCD but the overall method is the same https://calebcoffie.com/part-3-adding-longhorn-for-persistent-storage-on-our-talos-powered-kubernetes-cluster/
+
+checked health of the installation based on comparing outputs from my cluster and the docs of longhorn https://longhorn.io/docs/1.8.0/deploy/install/install-with-flux/
+longhorn has a pretty ui https://longhorn.io/docs/1.8.0/deploy/accessing-the-ui/
+
+as a side note... [longhorn makes more sense in bare metal setups](https://www.reddit.com/r/kubernetes/comments/10war0o/can_someone_explain_me_the_true_benefits_of/)
+default storage class as longhorn
+longhorn creates as default in every pvc a lost+found folder, which is sometimes unwanted. For these cases thre is this issue where fstype may be modified to 'xfs' to avoid this behaviour https://github.com/longhorn/longhorn/issues/1580
+https://github.com/longhorn/longhorn/issues/913
+
+
+this longhorn is used to create pvc for dynamic provision of volumes for services such as rabbitmq, grafana, loki/alloy and custom logs.
 
 ## Secrets
 
 * Secrets are synced to Azure Key Vault
 * SAS tokens for Storage Account Access
+
+## Core 
+- VM
+- VNets
+- Secrets
+- Storage
 
 ## Repo Structure
 
