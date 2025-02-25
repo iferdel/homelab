@@ -4,7 +4,7 @@ resources:
   - repository.yaml
   - grafana.yaml
   - grafana-pvc.yaml
-  - grafana-configmap.yaml
+  # - grafana-configmap.yaml
   - grafana-service.yaml
   # - alloy.yaml
   # - loki-stack.yaml
