@@ -54,11 +54,11 @@ spec:
             # - mountPath: /etc/grafana/provisioning/datasources
             #   name: grafana-datasources
             #   readOnly: false
-            - mountPath: /var/lib/grafana/dashboards
-              name: grafana-dashboard
-              readOnly: false
-            - mountPath: /etc/grafana/provisioning/dashboards
-              name: grafana-dashboard-definition
+            # - mountPath: /var/lib/grafana/dashboards
+            #   name: grafana-dashboard
+            #   readOnly: false
+            # - mountPath: /etc/grafana/provisioning/dashboards
+            #   name: grafana-dashboard-definition
       volumes:
         - name: grafana-pv
           persistentVolumeClaim:
@@ -67,11 +67,11 @@ spec:
         #   configMap:
         #       defaultMode: 420
         #       name: grafana-datasources
-        - name: grafana-dashboard
-          configMap:
-              defaultMode: 420
-              name: grafana-dashboard
-        - name: grafana-dashboard-definition
-          configMap:
-              defaultMode: 420
-              name: grafana-dashboardsdef
+        # - name: grafana-dashboard
+        #   configMap:
+        #       defaultMode: 420
+        #       name: grafana-dashboard
+        # - name: grafana-dashboard-definition
+        #   configMap:
+        #       defaultMode: 420
+        #       name: grafana-dashboardsdef
