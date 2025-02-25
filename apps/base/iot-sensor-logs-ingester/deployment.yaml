@@ -27,12 +27,12 @@ spec:
                 secretKeyRef:
                   name: timescaledb-conn-string
                   key: POSTGRES_CONN_STRING
-          volumeMounts:
-            - mountPath: "/app/log"
-              name: iotlogs
-      volumes:
-        - name: iotlogs
-          persistentVolumeClaim:
-            claimName: iot-logs-pvc
+      #     volumeMounts:
+      #       - mountPath: "/app/log"
+      #         name: iotlogs
+      # volumes:
+      #   - name: iotlogs
+      #     persistentVolumeClaim:
+      #       claimName: iot-logs-pvc
 
       restartPolicy: Always
