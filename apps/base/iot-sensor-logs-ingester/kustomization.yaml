@@ -4,4 +4,4 @@ namespace: iot
 resources: 
   - configmap.yaml
   - deployment.yaml
-  # - pvc.yaml
+  - pvc.yaml

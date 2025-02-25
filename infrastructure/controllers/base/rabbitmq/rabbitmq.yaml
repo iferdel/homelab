@@ -13,9 +13,9 @@ spec:
     limits:
       cpu: 2000m
       memory: 2Gi
-  # persistence:
-  #   storageClassName: longhorn
-  #   storage: 10Gi
+  persistence:
+    storageClassName: longhorn
+    storage: 10Gi
   override:
     statefulSet:
       spec:
