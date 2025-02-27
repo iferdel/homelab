@@ -41,8 +41,6 @@ data:
         allowUiUpdates: true
         options:
           path: /etc/grafana/provisioning/dashboards
-          foldersFromFilesStructure: true
-        type: file
 
   iot.json : |-
     {
