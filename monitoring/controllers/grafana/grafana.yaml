@@ -50,10 +50,8 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/grafana
               name: grafana-pv
-            - mountPath: /var/lib/grafana/dashboards
-              name: grafana-provisioning-dashboards
             - mountPath: /etc/grafana/provisioning/dashboards
-              name: grafana-provisioning-dashboards-definitions-iot
+              name: grafana-provisioning-dashboards
       volumes:
         - name: grafana-pv
           persistentVolumeClaim:
@@ -62,7 +60,3 @@ spec:
           configMap:
               defaultMode: 420
               name: grafana-provisioning-dashboards
-        - name: grafana-provisioning-dashboards-definitions-iot
-          configMap:
-              defaultMode: 420
-              name: grafana-provisioning-dashboards-definitions-iot

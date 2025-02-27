@@ -1,11 +1,33 @@
----
+# ---
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: grafana-provisioning-dashboards
+#   namespace: monitoring
+# data:
+#   # may be better off in /etc/grafana/provisioning/dashboards
+#   dashboards.yaml: |-
+#     apiVersion: 1
+#     providers: 
+#       - name: 'IoT'
+#         orgId: 1
+#         folder: ''
+#         folderUid: ''
+#         type: file
+#         disableDeletion: true
+#         updateIntervalSeconds: 10
+#         allowUiUpdates: true
+#         options:
+#           path: /etc/grafana/provisioning/dashboards
+#           foldersFromFilesStructure: true
+#         type: file
+# ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: grafana-provisioning-dashboards
   namespace: monitoring
 data:
-  # may be better off in /etc/grafana/provisioning/dashboards
   dashboards.yaml: |-
     apiVersion: 1
     providers: 
@@ -21,14 +43,8 @@ data:
           path: /etc/grafana/provisioning/dashboards
           foldersFromFilesStructure: true
         type: file
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: grafana-provisioning-dashboards-definitions-iot
-  namespace: monitoring
-data:
-  dashboard.json : |-
+
+  iot.json : |-
     {
       "annotations": {
         "list": [
