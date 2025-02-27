@@ -48,14 +48,14 @@ spec:
               cpu: 250m
               memory: 750Mi
           volumeMounts:
-            - mountPath: /var/lib/grafana
-              name: grafana-pv
+            # - mountPath: /var/lib/grafana
+            #   name: grafana-pv
             - mountPath: /etc/grafana/provisioning/dashboards
               name: grafana-provisioning-dashboards
       volumes:
-        - name: grafana-pv
-          persistentVolumeClaim:
-            claimName: grafana-pvc
+        # - name: grafana-pv
+        #   persistentVolumeClaim:
+        #     claimName: grafana-pvc
         - name: grafana-provisioning-dashboards
           configMap:
               defaultMode: 420
