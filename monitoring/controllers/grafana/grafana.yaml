@@ -52,6 +52,8 @@ spec:
               name: grafana-pv
             - mountPath: /etc/grafana/provisioning/dashboards
               name: grafana-provisioning-dashboards
+            - mountPath: /etc/grafana/provisioning/datasources
+              name: grafana-provisioning-datasources
       volumes:
         - name: grafana-pv
           persistentVolumeClaim:
@@ -60,3 +62,7 @@ spec:
           configMap:
               defaultMode: 420
               name: grafana-provisioning-dashboards
+        - name: grafana-provisioning-datasources
+          configMap:
+              defaultMode: 420
+              name: grafana-provisioning-datasources
