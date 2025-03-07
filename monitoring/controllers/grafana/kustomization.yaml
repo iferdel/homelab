@@ -5,6 +5,8 @@ resources:
   - grafana.yaml
   - grafana-pvc.yaml
   - grafana-configmap-provisioning-dashboards.yaml
+  - grafana-configmap-provisioning-datasources.yaml
+  - grafana-configmap-provisioning-plugins.yaml
   - grafana-service.yaml
   # - alloy.yaml
   # - loki-stack.yaml
