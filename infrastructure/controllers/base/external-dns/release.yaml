@@ -13,16 +13,16 @@ spec:
         kind: HelmRepository
         name: external-dns
         namespace: external-dns
-  # values:
-  #   sources:
-  #     - ingress
-  #   policy: sync
-  #   provider:
-  #     name: cloudflare
-  # env:
-  #   - name: CF_API_TOKEN
-  #     valueFrom:
-  #       secretKeyRef:
-  #         name: cloudflare-api-key
-  #         key: apiKey
+  values:
+    sources:
+      - ingress
+    policy: sync
+    provider:
+      name: cloudflare
+  env:
+    - name: CF_API_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: cloudflare-api-key
+          key: apiKey
 
