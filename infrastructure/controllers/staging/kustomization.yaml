@@ -3,5 +3,6 @@ resources:
   - longhorn
   - cert-manager
   - external-dns
+  - haproxy
   # - external-secrets
   # - azwi
