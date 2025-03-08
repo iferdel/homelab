@@ -19,10 +19,10 @@ spec:
     policy: sync
     provider:
       name: cloudflare
-  env:
-    - name: CF_API_TOKEN
-      valueFrom:
-        secretKeyRef:
-          name: cloudflare-api-key
-          key: apiKey
+    env:
+      - name: CF_API_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: cloudflare-api-key
+            key: apiKey
 
