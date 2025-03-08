@@ -1,5 +1,6 @@
 resources:
   - rabbitmq
   - longhorn
+  - cert-manager
   # - external-secrets
   # - azwi
