@@ -17,10 +17,10 @@ spec:
       clientId:
         valueFrom:
           secretKeyRef:
-            name: tailscale-oauth
+            name: operator-oauth
             key: oauth-client-id
       clientSecret:
         valueFrom:
           secretKeyRef:
-            name: tailscale-oauth
+            name: operator-oauth
             key: oauth-client-secret
