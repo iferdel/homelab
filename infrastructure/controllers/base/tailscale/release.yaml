@@ -13,12 +13,12 @@ spec:
         kind: HelmRepository
         name: tailscale
         namespace: tailscale
-  valuesFrom:
-  - kind: Secret
-    name: tailscale-oauth
-    valuesKey: clientId
-    targetPath: oauth.clientId
-  - kind: Secret
-    name: tailscale-oauth
-    valuesKey: clientSecret
-    targetPath: oauth.clientSecret
+  # valuesFrom:
+  # - kind: Secret
+  #   name: tailscale-oauth
+  #   valuesKey: clientId
+  #   targetPath: oauth.clientId
+  # - kind: Secret
+  #   name: tailscale-oauth
+  #   valuesKey: clientSecret
+  #   targetPath: oauth.clientSecret
