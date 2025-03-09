@@ -17,3 +17,5 @@ spec:
       secrets:
         create: false
         existingSecret: operator-oauth
+        clientIdKey: "oauth-client-id"
+        clientSecretKey: "oauth-client-secret"
