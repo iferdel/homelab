@@ -12,10 +12,13 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: tailscale
-  values:
-    oauth:
-      secrets:
-        create: false
-        existingSecret: operator-oauth
-        clientId: "oauth-client-id"
-        clientSecret: "oauth-client-secret"
+        namespace: tailscale
+  valuesFrom:
+  - kind: Secret
+    name: tailscale-oauth
+    valuesKey: clientId
+    targetPath: oauth.clientId
+  - kind: Secret
+    name: tailscale-oauth
+    valuesKey: clientSecret
+    targetPath: oauth.clientSecret
