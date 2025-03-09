@@ -12,7 +12,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: tailscale
-        namespace: tailscale
   # valuesFrom:
   # - kind: Secret
   #   name: tailscale-oauth
