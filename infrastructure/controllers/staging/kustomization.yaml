@@ -1,9 +1,9 @@
 resources:
   - rabbitmq
   - longhorn
-  - cert-manager
-  - external-dns
-  - haproxy
-  - metallb
+  # - cert-manager
+  # - external-dns
+  # - haproxy
+  # - metallb
   # - external-secrets
   # - azwi
