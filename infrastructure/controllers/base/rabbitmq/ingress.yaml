@@ -3,11 +3,10 @@ kind: Ingress
 metadata:
   name: rabbitmq-ingress
   namespace: rabbitmq-system
-  annotations:
-    kubernetes.io/ingress.class: haproxy
 spec:
+  ingressClassName: haproxy
   rules:
-    - host: iferdel.dev
+    - host: "iferdel.dev"
       http:
         paths:
           - path: /rabbitmq
