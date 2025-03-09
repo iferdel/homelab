@@ -1,6 +1,7 @@
 resources:
   - rabbitmq
   - longhorn
+  - tailscale
   # - cert-manager
   # - external-dns
   # - haproxy
