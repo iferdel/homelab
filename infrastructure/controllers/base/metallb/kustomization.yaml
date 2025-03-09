@@ -1,5 +1,5 @@
 resources:
-  - namsepace.yaml
+  - namespace.yaml
   - repository.yaml
   - release.yaml
   - configmap.yaml
