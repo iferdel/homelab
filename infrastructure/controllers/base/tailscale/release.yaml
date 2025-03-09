@@ -12,17 +12,15 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: tailscale
-  # values:
-  #   oauth:
-  #     clientId:
-  #       valueFrom:
-  #         secretKeyRef:
-  #           name: tailscale-oauth
-  #           key: oauth-client-id
-  #     clientSecret:
-  #       valueFrom:
-  #         secretKeyRef:
-  #           name: tailscale-oauth
-  #           key: oauth-client-secret
-
-
+  values:
+    oauth:
+      clientId:
+        valueFrom:
+          secretKeyRef:
+            name: tailscale-oauth
+            key: oauth-client-id
+      clientSecret:
+        valueFrom:
+          secretKeyRef:
+            name: tailscale-oauth
+            key: oauth-client-secret
