@@ -4,3 +4,4 @@ resources:
   - cluster-kubernetes-operator.yaml
   - rabbitmq.yaml
   - configmap.yaml
+  - ingress.yaml
