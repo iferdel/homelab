@@ -14,13 +14,6 @@ spec:
         name: tailscale
   values:
     oauth:
-      clientId:
-        valueFrom:
-          secretKeyRef:
-            name: operator-oauth
-            key: oauth-client-id
-      clientSecret:
-        valueFrom:
-          secretKeyRef:
-            name: operator-oauth
-            key: oauth-client-secret
+      secrets:
+        create: false
+        existingSecret: operator-oauth
