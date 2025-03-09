@@ -1,15 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rabbitmq-ingress
+  name: rabbitmq
   namespace: rabbitmq-system
+  labels:
+    app.kubernetes.io/name: rabbitmq
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: iferdel.dev
 spec:
   ingressClassName: haproxy
   rules:
-    - host: "iferdel.dev"
+    - host: iferdel.dev
       http:
         paths:
-          - path: /
+          - path: "/"
             pathType: Prefix
             backend:
               service:
