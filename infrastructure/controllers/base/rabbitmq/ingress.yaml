@@ -9,7 +9,7 @@ spec:
     - host: "iferdel.dev"
       http:
         paths:
-          - path: /rabbitmq
+          - path: /
             pathType: Prefix
             backend:
               service:
