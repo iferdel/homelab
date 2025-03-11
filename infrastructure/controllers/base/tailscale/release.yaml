@@ -17,6 +17,8 @@ spec:
     oauthSecretVolume:
       secret:
         secretName: operator-oauth
+    apiServerProxyConfig:
+      mode: "true"
     operatorConfig:
       defaultTags:
         - "tag:k8s-operator"
