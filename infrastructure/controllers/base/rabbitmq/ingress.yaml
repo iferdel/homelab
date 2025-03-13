@@ -11,5 +11,5 @@ spec:
         number: 15672
   ingressClassName: tailscale
   tls:
-    - hosts:
-        - rabbitmq.tailbb8712.ts.net
+  - hosts:
+    - rabbitmq.tailbb8712.ts.net
