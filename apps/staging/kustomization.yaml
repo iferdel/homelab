@@ -8,4 +8,4 @@ resources:
   - iot-sensor-measurements-ingester
   # - cloudnativepg
   # - timescaledb
-
+  # - oidc
