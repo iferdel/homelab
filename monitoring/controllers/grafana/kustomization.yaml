@@ -8,5 +8,6 @@ resources:
   - grafana-configmap-provisioning-datasources.yaml
   - grafana-configmap-provisioning-plugins.yaml
   - grafana-service.yaml
+  - grafana-ingress.yaml
   # - alloy.yaml
   # - loki-stack.yaml
