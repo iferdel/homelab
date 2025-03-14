@@ -1,10 +1,10 @@
 resources:
-  - rabbitmq
-  - longhorn
   - tailscale
-  # - cert-manager
-  # - external-dns
+  - cert-manager
+  - external-dns
+  - external-secrets
   - haproxy
   # - metallb
-  # - external-secrets
   # - azwi
+  - longhorn
+  - rabbitmq
