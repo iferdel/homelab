@@ -1,18 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: ingress-iot-api
+  namespace: iot
 spec:
-  rules:
-    - host: iot-api
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: iot-api
-                port:
-                  number: 80
+  defaultBackend: 
+    service:
+      name: iot-api
+      port:
+        number: 8080
+  ingressClassName: tailscale
+  tls:
+  - hosts:
+    - iot.tailbb8712.ts.net
