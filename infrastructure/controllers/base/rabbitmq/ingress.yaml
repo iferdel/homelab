@@ -13,5 +13,3 @@ spec:
   tls:
   - hosts:
     - rabbitmq.tailbb8712.ts.net
-  rules:
-    - host: rabbitmq.tailbb8712.ts.net
