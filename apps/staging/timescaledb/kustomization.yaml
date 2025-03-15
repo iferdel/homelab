@@ -5,22 +5,18 @@ patches:
   - target:
       kind: Cluster
       name: timescaledb
-    patch: |
+    patch: |-
       - op: add
         path: /spec
         value:
           storage:
             storageClass: longhorn
             size: 5Gi
-      - op: add
-        path: /spec/bootstrap/initdb
-        value:
-          customScripts:
-            fromConfigMap:
-              name: timescaledb-init-script
-      - op: add
-        path: /spec
-        value:
+          bootstrap:
+            initdb:
+              customScripts:
+                fromConfigMap:
+                  name: timescaledb-init-script
           podTemplate:
             containers:
               - name: postgres
