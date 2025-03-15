@@ -5,11 +5,12 @@ patches:
   - target:
       kind: Cluster
       name: timescaledb
-    patch: |-
+    patch: |
       - op: add
         path: /spec
         value:
           storage:
+            storageClass: longhorn
             size: 5Gi
       - op: add
         path: /spec/bootstrap/initdb
