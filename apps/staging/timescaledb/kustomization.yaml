@@ -12,13 +12,13 @@ patches:
           storage:
             size: 5Gi
       - op: add
-        path: spec/bootstrap/initdb
+        path: /spec/bootstrap/initdb
         value:
           customScripts:
             fromConfigMap:
               name: timescaledb-init-script
       - op: add
-        path: spec
+        path: /spec
         value:
           podTemplate:
             containers:
