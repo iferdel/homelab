@@ -7,7 +7,7 @@ patches:
       name: timescaledb
     patch: |-
       - op: add
-        path: /spec/storage
+        path: /spec/volumes
         value:
           persistentVolumeClaim:
             claimName: timescaledb-pvc
