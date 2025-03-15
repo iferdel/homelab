@@ -1,5 +1,6 @@
 resources:
   - ../../base/timescaledb/
+  - configmap.yaml
 patches:
   - target:
       kind: Cluster
@@ -10,3 +11,41 @@ patches:
         value:
           storage:
             size: 5Gi
+      - op: add
+        path: spec/bootstrap/initdb
+        value:
+          customScripts:
+            fromConfigMap:
+              name: timescaledb-init-script
+      - op: add
+        path: spec
+        value:
+          podTemplate:
+            containers:
+              - name: postgres
+                env:
+                  - name: IOT_PASSWORD
+                    valueFrom:
+                      configMapKeyRef:
+                        name: timescaledb-roles
+                        key: IOT_PASSWORD
+                  - name: IOT_REPLICATION_PASSWORD
+                    valueFrom:
+                      configMapKeyRef:
+                        name: timescaledb-roles
+                        key: IOT_REPLICATION_PASSWORD
+                  - name: IOT_MONITORING_PASSWORD
+                    valueFrom:
+                      configMapKeyRef:
+                        name: timescaledb-roles
+                        key: IOT_MONITORING_PASSWORD
+                  - name: IOT_APP_PASSWORD
+                    valueFrom:
+                      configMapKeyRef:
+                        name: timescaledb-roles
+                        key: IOT_APP_PASSWORD
+                  - name: IOT_READONLY_PASSWORD
+                    valueFrom:
+                      configMapKeyRef:
+                        name: timescaledb-roles
+                        key: IOT_READONLY_PASSWORD
