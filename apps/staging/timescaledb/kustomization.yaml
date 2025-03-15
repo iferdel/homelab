@@ -1,13 +1,12 @@
 resources:
   - ../../base/timescaledb/
-  - pvc.yaml
 patches:
   - target:
       kind: Cluster
       name: timescaledb
     patch: |-
       - op: add
-        path: /spec/volumes
+        path: /spec
         value:
-          persistentVolumeClaim:
-            claimName: timescaledb-pvc
+          storage:
+            size: 5Gi
