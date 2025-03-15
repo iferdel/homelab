@@ -1,4 +1,13 @@
-# kustomization.yaml
 resources:
-  # - ../../base/timescaledb/
+  - ../../base/timescaledb/
   - pvc.yaml
+patches:
+  - target:
+      kind: Cluster
+      name: timescaledb
+    patch: |-
+      - op: add
+        path: /spec/storage
+        value:
+          persistentVolumeClaim:
+            claimName: timescaledb-pvc
