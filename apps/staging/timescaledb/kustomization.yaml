@@ -1,3 +1,4 @@
 # kustomization.yaml
 resources:
-  - ../../base/timescaledb/
+  # - ../../base/timescaledb/
+  - pvc.yaml

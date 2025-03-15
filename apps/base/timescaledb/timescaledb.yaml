@@ -11,6 +11,27 @@ spec:
     initdb:
       postInitTemplateSQL:
         - CREATE EXTENSION timescaledb;
+        - CREATE EXTENSION postgis;
+        - CREATE EXTENSION pg_stat_statements;
+        - CREATE EXTENSION pg_stat_kcache;
   postgresql:
     shared_preload_libraries:
       - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
+      - postgis
+      - pg_stat_statements
+      - pg_stat_kcache
+  # storage:
+  #   storageClassName: longhorn 
+  #   resources:
+  #     requests:
+  #       storage: 30Gi
+  # volumeClaimTemplate:
+  #   metadata:
+  #     name: timescaledb-data
+  #   spec:
+  #     accessModes:
+  #       - ReadWriteOnce
+  #     storageClassName: longhorn
+  #     resources:
+  #       requests:
+  #         storage: 30Gi
