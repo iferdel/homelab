@@ -77,5 +77,5 @@ patches:
             initdb:
               postInitApplicationSQLRefs:
                 configMapRefs:
-                  name: timescaledb-init-script
+                - name: timescaledb-init-script
                   key: init.sql
