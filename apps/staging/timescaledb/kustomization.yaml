@@ -11,10 +11,9 @@ patches:
         path: /spec
         value:
 
-          storageConfiguration:
-            volume:
-              emptyDir:
-                sizeLimit: "5Gi"
+          storage:
+            storageClass: longhorn
+            size: 5Gi
 
           managed:
             roles:
