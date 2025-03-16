@@ -76,8 +76,9 @@ patches:
 
           bootstrap:
             initdb:
-              postInitApplicationSQL:
-                - database: monitoring
-                  configMapKeyRef:
-                    name: timescaledb-monitoring-init-script
-                    key: monitoring-init.sql
+              database: iot
+              owner: iot_app
+              postInitApplicationSQLRefs:
+                configMapRefs:
+                - name: timescaledb-init-script
+                  key: init.sql
