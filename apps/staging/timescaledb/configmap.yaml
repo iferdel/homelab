@@ -10,11 +10,6 @@ data:
     -- 3.3 Revoke default privileges from 'public'.
     REVOKE ALL ON SCHEMA public FROM public;
 
-    -- * Activate the postgis extension (installed but disabled by default in timescaledb docker image)
-    CREATE EXTENSION postgis;
-
-    -- ** auto_explain is loaded/enabled by default if used in shared_preload_libraries.
-
     -- 1.2 Set role to 'iot_app'.
     SET ROLE iot_app;
 
