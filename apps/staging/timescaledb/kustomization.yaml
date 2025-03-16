@@ -76,7 +76,8 @@ patches:
 
           bootstrap:
             initdb:
-              postInitApplicationSQLRefs:
-                configMapRefs:
-                - name: timescaledb-init-script
-                  key: init.sql
+              postInitApplicationSQL:
+                - database: monitoring
+                  configMapKeyRef:
+                    name: timescaledb-monitoring-init-script
+                    key: monitoring-init.sql
