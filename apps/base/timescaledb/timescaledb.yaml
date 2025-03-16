@@ -5,20 +5,81 @@ metadata:
   namespace: data
 spec:
   description: "PostgreSQL with timescaleDB extension for time series data"
+  startDelay: 300
+  stopDelay: 300 
   instances: 3
   imageName: ghcr.io/imusmanmalik/timescaledb-postgis:16-3.5
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "1"
+    limits:
+      memory: "1Gi"
+      cpu: "2"
   bootstrap:
     initdb:
       postInitTemplateSQL:
         - CREATE EXTENSION timescaledb;
         - CREATE EXTENSION postgis;
+        - CREATE EXTENSION postgis_topology;
+        - CREATE EXTENSION fuzzystrmatch;
+        - CREATE EXTENSION postgis_tiger_geocoder;
         - CREATE EXTENSION pg_stat_statements;
         - CREATE EXTENSION pg_stat_kcache;
   postgresql:
-    shared_preload_libraries:
-      - timescaledb # check for pg_stat_statement, pg_stat_kcache and the alike
-      - postgis
-      - pg_stat_statements
-      - pg_stat_kcache
+    parameters:
+      max_connections: 50
+      shared_buffers: 1003354kB
+      work_mem: 2508kB
+      maintenance_work_mem: 501677kB		# min 64kB
+      dynamic_shared_memory_type: posix	# the default is usually the first option
+      effective_io_concurrency: 256		# 1-1000; 0 disables prefetching
+      max_worker_processes: 27		# (change requires restart)
+      max_parallel_workers_per_gather: 4	# limited by max_parallel_workers
+      max_parallel_workers: 8		# number of max_worker_processes that
+      wal_buffers: 16MB			# min 32kB, -1 sets based on shared_buffers
+      checkpoint_completion_target: 0.9	# checkpoint target duration, 0.0 - 1.0
+      max_wal_size: 1GB
+      min_wal_size: 512MB
+      random_page_cost: 1.1			# same scale as above
+      effective_cache_size: 2939MB
+      default_statistics_target: 100	# range 1-10000
+      jit: off				# allow JIT compilation
+      log_timezone: 'Etc/UTC'
+      autovacuum_max_workers: 10		# max number of autovacuum subprocesses
+      autovacuum_naptime: 10		# time between autovacuum runs
+      default_toast_compression: lz4	# 'pglz' or 'lz4'
+      datestyle: 'iso, mdy'
+      timezone: 'Etc/UTC'
+      lc_messages: 'C.UTF-8'			# locale for system error message
+      lc_monetary: 'C.UTF-8'			# locale for monetary formatting
+      lc_numeric: 'C.UTF-8'			# locale for number formatting
+      lc_time: 'C.UTF-8'			# locale for time formatting
+      default_text_search_config: 'pg_catalog.english'
+      shared_preload_libraries: 'timescaledb,pg_stat_statements,pg_stat_kcache,auto_explain'		# (change requires restart)
+      max_locks_per_transaction: 128		# min 10
+      timescaledb.telemetry_level: basic
+      timescaledb.max_background_workers: 16
+      compute_query_id: true
+      pg_stat_statements.max: 2500
+      pg_stat_statements.track: all
+      pg_stat_statements.track_utility: on
+      pg_stat_statements.track_planning: off
+      pg_stat_statements.save: on
+      pg_stat_kcache.linux_hz: -1
+      pg_stat_kcache.track: top
+      pg_stat_kcache.track_planning: off
+      auto_explain.log_min_duration: 3s
+      auto_explain.log_analyze: on
+      auto_explain.log_buffers: off
+      auto_explain.log_wal: off
+      auto_explain.log_timing: off
+      auto_explain.log_triggers: off
+      auto_explain.log_verbose: off
+      auto_explain.log_settings: off
+      auto_explain.log_format: 'text'
+      auto_explain.log_level: 'LOG'
+      auto_explain.log_nested_statements: off
+      auto_explain.sample_rate: 1
   monitoring:
     enablePodMonitor: true
