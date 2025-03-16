@@ -11,17 +11,10 @@ patches:
         path: /spec
         value:
 
-          ephemeralVolumesSizeLimit:
-            shm: 1Gi
-            temporaryData: 1Gi
-
-          storage:
-            volumes:
-              - name: data
-                mountPath: /var/lib/postgresql/data
-                ephemeral:
-                  emptyDir: {}
-                  sizeLimit: "5Gi"
+          storageConfiguration:
+            volume:
+              emptyDir:
+                sizeLimit: "5Gi"
 
           managed:
             roles:
