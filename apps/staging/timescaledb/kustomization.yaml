@@ -78,7 +78,3 @@ patches:
             initdb:
               database: iot
               owner: iot_app
-              postInitApplicationSQLRefs:
-                configMapRefs:
-                - name: timescaledb-init-script
-                  key: init.sql
