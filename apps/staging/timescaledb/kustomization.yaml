@@ -11,14 +11,9 @@ patches:
         path: /spec
         value:
 
-          ephemeralVolumeSource:
-            volumeClaimTemplate:
-              spec:
-                accessModes: ["ReadWriteOnce"]
-                storageClassName: "longhorn"
-                resources:
-                  requests:
-                    storage: 1Gi
+          storage:
+            storageClass: longhorn
+            size: 5Gi
 
           managed:
             roles:
