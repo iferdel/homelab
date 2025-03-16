@@ -11,9 +11,14 @@ patches:
         path: /spec
         value:
 
-          storage:
-            storageClass: longhorn
-            size: 5Gi
+          ephemeralVolumeSource:
+            volumeClaimTemplate:
+              spec:
+                accessModes: ["ReadWriteOnce"]
+                storageClassName: "longhorn"
+                resources:
+                  requests:
+                    storage: 1Gi
 
           managed:
             roles:
@@ -38,6 +43,7 @@ patches:
                 comment: role dedicated to be used by iot service
                 login: true
                 superuser: false
+                createdb: true
                 inherit: true
                 passwordSecret:
                   name: cluster-roles-iot-app
