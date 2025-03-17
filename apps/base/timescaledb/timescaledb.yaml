@@ -7,6 +7,7 @@ spec:
   description: "PostgreSQL with timescaleDB extension for time series data"
   # startDelay: 300
   # stopDelay: 300 
+  postgresVersion: 14
   instances: 1
   imageName: ghcr.io/imusmanmalik/timescaledb-postgis:14-3.3
   # resources:
