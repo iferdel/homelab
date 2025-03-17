@@ -8,7 +8,7 @@ spec:
   # startDelay: 300
   # stopDelay: 300 
   instances: 1
-  imageName: ghcr.io/imusmanmalik/timescaledb-postgis:17-3.5
+  imageName: ghcr.io/imusmanmalik/timescaledb-postgis:14-3.3
   # resources:
   #   requests:
   #     memory: "512Mi"
