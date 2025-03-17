@@ -7,5 +7,5 @@ resources:
   - iot-sensor-logs-ingester
   - iot-sensor-measurements-ingester
   - cloudnativepg
-  - timescaledb
+  # - timescaledb
   # - oidc
