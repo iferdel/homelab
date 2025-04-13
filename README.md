@@ -1,5 +1,11 @@
 # Homelab
 
+thought on which using nginx or traefik, but got into this [video](http://youtube.com/watch?v=h-ygQbBROXY) and im going full HAProxy
+although this video is testing the standalones inverse proxies, in this cluster we are using ingress controllers. But i think overall the output will be similar
+even though one mauy think that the controller 'health' check and monitoring may be better in one or another, thats some food for thought
+
+for anyone out there looking for a way to solidify foundations over how ingresses work and what would a controller fit here i storngly recommend the [HAProxy docs](https://www.haproxy.com/documentation/kubernetes-ingress/overview/)
+
 This repo contains all of the configuration and documentation of my homelab.
 
 The whole idea of having a homelab is to have a place where I can try out and learn new things using Kubernetes and GitOps as backbone. On the other hand, by self-hosting some applications, it makes me feel responsible for the entire process of deploying and maintaining an application from A to Z. It forces me to think about backup strategies, security, scalability and the ease of deployment and maintenance.
@@ -7,6 +13,8 @@ The whole idea of having a homelab is to have a place where I can try out and le
 (Diagram of GitOps powered homelab)
 
 highly recommend https://kube.fm/episodes
+
+the svc changed in rabbitmq when reinitialized with different name ingress
 
 ## Principles
 
@@ -62,6 +70,18 @@ https://github.com/longhorn/longhorn/issues/913
 
 
 this longhorn is used to create pvc for dynamic provision of volumes for services such as rabbitmq, grafana, loki/alloy and custom logs.
+
+for correctly remove all of longhorn (in case of changing namespaces, as it happened to me, which ends up having namespaces stuck in Terminating state) this post is gold https://github.com/longhorn/longhorn/issues/5319
+https://github.com/longhorn/longhorn/issues/5319
+
+
+pvcs and pods and pvs would be stated in terminating state (circular dependency i guess). Actually, modifying the finalizers is key to make them removable (with force and grace period of 0 though, but at least is workable)
+
+
+how about finalizers. 
+csi's are also another one
+container storage interface
+
 
 ## Secrets
 
