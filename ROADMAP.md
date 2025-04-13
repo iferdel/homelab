@@ -1,0 +1,28 @@
+# ROADMAP
+- [] airbyte
+- [] airflow
+- [] dbt models
+- [] sonarcube
+- [] gitlab server
+- [] gitlabui tailscale vpn
+- [] jenkins server
+- [] jenkingsui tailscale vpn
+- [] jfrog
+- [] jfrog tailscale vpn
+- [] selenium server
+- [] external secrets
+- [] azwi
+- [] azure key vault
+- [] k9s improvement
+- [] local hosted timescaledb
+- [] cert-manager
+- [] external-dns
+- [] prometheus
+- [] expandir con más nodos para tener production environment. En production podría utilizar cosas más elaboradas como akv o timescale cloud o algo así.
+- [] expandir proyecto de sensores con scylladb (especie de adaptador para usar una u otra dependiendo de una variable de ambiente)
+- [] scylladb
+- [] grafana provisioning de databases (necesario tener resuelto tema de secrets)
+- [] separar cosas del base a staging o prpduction donde corresponda
+- [] identificar si dejar namespace como un folder por sí solo, esto para evitar que cualquier rollback destruya kubernetes secrets en caso de estar utilizándolos.
+- [] haproxy como reverse proxy
+- [] metallb en caso de necesitar loadbalancer por tratarse de un bare metal cluster (on prem)
