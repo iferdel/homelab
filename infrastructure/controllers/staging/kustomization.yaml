@@ -1,9 +1,9 @@
 resources:
   - tailscale
-  - cert-manager
-  - external-dns
-  - external-secrets
-  - haproxy
+  # - cert-manager
+  # - external-dns
+  # - external-secrets
+  # - haproxy
   # - metallb
   # - azwi
   - longhorn
